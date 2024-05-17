@@ -32,4 +32,7 @@ Vagrant.configure("2") do |config|
      echo "alias python='python3'" >> /home/vagrant/.bash_aliases
    fi
  SHELL
+ config.vm.provider "virtualbox" do |vb|
+   vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
+ end
 end
